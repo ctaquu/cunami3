@@ -1,0 +1,190 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+html, body, .main_container, .studio_column {
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+footer {
+    clear: both;
+}
+
+/* index page */
+
+.index_wrapper .big_button {
+    font-size: 50px;
+    line-height: 50px;
+    font-weight: bold;
+    padding: 0.3em;
+    /*display: flex;*/
+    margin: 1em 0em;
+}
+
+.index_wrapper .nbg {
+    color: darkred;
+}
+
+.index_wrapper .vuk {
+    color: darkblue;
+}
+
+.btn_vuk {
+    color: red;
+}
+
+.btn_nbg {
+    color: blue;
+}
+
+/* end of index page */
+
+/* reservations page */
+
+.day_of_the_week {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.studio_column, .hour_column {
+    float: left;
+    position: relative;
+    margin: 0px 1px;
+}
+
+.studio_column {
+    margin-top: .5em;
+    width: 20%;
+}
+
+.hour_column {
+    width: 8%;
+}
+
+.reservation_hour, .action_button {
+    cursor: pointer;
+}
+
+.reservation_hour, .row_hour_title {
+    height: 30px;
+    margin: 1px;
+}
+
+.row_hour_title {
+    border: 1px solid transparent;
+}
+
+.row_hour_title_right {
+    text-align: right;
+}
+
+.row_hour_title_left {
+    text-align: left;
+}
+
+.reservation_hour {
+    background-color: #eeeeee;
+    border: 1px solid #bbbbbb;
+    text-align: center;
+}
+
+.customer_name_container {
+    margin-top: 0.4em;
+    display:inline-block;
+    vertical-align:middle;
+    pointer-events: none;
+}
+
+.hour_selected {
+    color: white;
+}
+
+.new_selection_active {
+    background-color: #FF9999;
+}
+
+.action_button {
+    display: none;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    background-color: lightgray;
+    width: 17%;
+    /*max-width: 50px;*/
+    /* width: 100px; */
+    /* height: 100px; */
+    padding: 10px;
+    font-weight: bold;
+}
+
+.sum_container label {
+    font-weight: bold;
+    margin: 1em 0em;
+}
+
+.sum_container span {
+    background: white;
+    color: red;
+    padding: 0.3em;
+}
+
+.modal .price_select {
+    width: 80px;
+    float: right;
+}
+
+.modal .btn_submit_reservation, .modal .btn_update_reservation {
+    float: left;
+}
+
+.modal .btn_delete_reservation {
+    float: right;
+    background: none #ff0000;
+}
+
+.modal .txt_customer {
+    width: 60%;
+}
+
+/* end of reservations page */
+
+/* loading overlay */
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.overlay_modal {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 )
+    url('http://i.stack.imgur.com/FhHRx.gif')
+    50% 50%
+    no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .overlay_modal {
+    display: block;
+}
+
+/* end of loading overlay */
