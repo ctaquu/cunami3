@@ -48,19 +48,9 @@
     <label>
         Total:: <span id="sum">0</span>
     </label>
-    <?php if($_SERVER['REMOTE_ADDR'] == "89.216.16.193") {?>
-
-<!--        --><?php
-//        $cal = IntlCalendar::createInstance();
-//        $cal->set(2013, 5 /* June */, 30); // A Sunday
-//     ?>
-<!---->
-<!--        var_dump($cal->getFirstDayOfWeek());-->
-<!---->
-<!--    <label>-->
-<!--        Week Total:: <span id="sum_week">0</span>-->
-<!--    </label>-->
-    <?php } ?>
+    <label>
+        Week(<span id="week_number">0</span>) Total:: <span id="sum_week">0</span>
+    </label>
     <label>
         Month Total:: <span id="sum_month">0</span>
     </label>

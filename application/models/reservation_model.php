@@ -149,29 +149,27 @@ class Reservation_model extends MY_Model {
         $location_id = $this->session->userdata('studio_location');
 
         $query_string = "
-
                     SELECT
-                      st.location_id                location
-                      , WEEK(re.reservation_date)   week
-                      , YEAR(re.reservation_date)   year
-                      , SUM(re.price)               sum
+                      st.location_id                    location,
+                      YEARWEEK(re.reservation_date, 3)  week,
+                      SUM(re.price)                     sum
                     FROM
                       reservation re
                       LEFT JOIN studio st ON st.studio_id = re.studio_id
                     WHERE
-                      st.location_id = $location_id
+                      st.location_id = ?
                     GROUP BY
-                      st.location_id
-                      , WEEK(re.reservation_date)
-                      , YEAR(re.reservation_date)
+                      location
+                      , week
                     HAVING
-                      week = WEEK('$date 00:00:01')
-                      AND year = YEAR('$date 00:00:01')
+                      week = YEARWEEK(?, 3)
                     ;
-
         ";
 
-        $query = $this->db->query($query_string);
+        $query = $this->db->query($query_string, [
+            $location_id
+            , "$date 00:00:01"
+        ]);
         return $query->result();
     }
 

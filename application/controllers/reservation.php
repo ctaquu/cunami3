@@ -141,6 +141,7 @@ class Reservation extends CI_Controller {
             , "sum_week"        => $sum_week[0]->sum
             , "sum_month"       => $sum_month[0]->sum
             , "day_of_the_week" => $this->day_of_week($date)
+            , "week_number"     => substr($sum_week[0]->week, 4, 2)
         ));
 
     }

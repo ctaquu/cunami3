@@ -399,6 +399,7 @@ function repopulate_table(date) {
             reset_global_variables();
             $(" #sum ").html(result.sum ? result.sum : "0");
             $(" #sum_week ").html(result.sum_week ? result.sum_week : "0");
+            $(" #week_number ").html(result.week_number ? result.week_number : "0");
             $(" #sum_month ").html(result.sum_month ? result.sum_month : "0");
             $(" .day_of_the_week ").html(result.day_of_the_week);
             //calculate_sum();
